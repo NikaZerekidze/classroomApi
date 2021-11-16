@@ -11,6 +11,11 @@ class Classroom extends Model
 
     public function lecturer()
     {
-        return $this->hasMany(Lecturer::class, 'id' , 'lecturerId');
+        return $this->hasOne(Lecturer::class);
+    }
+
+    public function subject()
+    {
+        return $this->hasOne(Subject::class);
     }
 }
